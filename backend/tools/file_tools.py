@@ -22,3 +22,8 @@ def list_files(directory: str) -> List[str]:
         for file in files:
             files_list.append(os.path.relpath(os.path.join(root, file), directory))
     return files_list
+
+def create_directory(path: str) -> bool:
+    """Create directory structure safely (Person 3)."""
+    os.makedirs(path, exist_ok=True)
+    return True
